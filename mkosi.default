@@ -1,0 +1,45 @@
+# rootfs configuration
+[Distribution]
+Distribution=fedora
+Release=34
+
+[Output]
+Bootable=no
+Format=subvolume
+Hostname=localhost
+Output=rootfs_2109.img
+OutputDir=mkosi.output/2109
+
+
+[Packages]
+Cache=../__sharedCache__
+Packages=
+	btrfs-progs
+	dmidecode
+	htop
+	kernel
+	openssh-server
+	passwd
+	pciutils
+	procps-ng
+	python3-pystemd
+	shadow-utils
+	systemd-container
+	systemd-networkd
+	systemd-pam
+	systemd-udev
+	usbutils
+	vim-enhanced
+	wget
+	zstd
+
+[Partitions]
+RootSize=2G
+
+[Validation]
+BMap=yes
+CheckSum=yes
+Sign=no
+Key=boxos_signature
+Password=changeme
+
